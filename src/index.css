@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  /* cursor: default;
+  user-select: none; */
+}
+
+body {
+  background-color: #272635;
+
+  font: 15px Roboto, Helvetica, Arial;
+  color: #E8E9F3;
+  
+  word-wrap: break-word;
+
+  width: 100vw;
+	height: 100vh;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.Menu {
+  width: 200px;
+  height: 100%;
+  background-color: #3D3B5B;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+code {
+	background-color: #F8F8F8;
+	border-radius: 3px;
+	border: 1px solid #DDD;
+	font-family: Consolas, "Liberation Mono", Courier, monospace;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	white-space: pre;
+}
+
+input {
+  color: #282c34;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.5;
+  border: 0;
+}
+
+.button-ghost {
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: transparent;
+}
+
+.Options {
+  position: absolute;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9F3;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+h2 {
+  font-size: 2.0em;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 1.1em;
+  font-weight: 500;
+	line-height: 1.5;
+}
+
+h6 {
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.link {
+  color: #4183c4;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
