@@ -1,0 +1,51 @@
+.navigation {
+  position: relative;
+  width: 30%;
+  height: auto;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  overflow-y: auto;
+  background-color: #2a2a3d;
+  scroll-behavior: smooth;
+}
+.navigation > .category {
+  position: relative;
+  width: 250px;
+  height: 30px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.1s;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.navigation > .category:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.navigation .submenu {
+  width: 250px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.navigation .submenu:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+  position: relative;
+  width: 70%;
+  padding: 20px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}/*# sourceMappingURL=Settings.css.map */

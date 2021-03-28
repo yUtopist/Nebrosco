@@ -1,0 +1,68 @@
+@import '../../StylesVariables';
+
+.navigation {
+	position: relative;
+	width: 30%;
+	height: auto;
+	padding-top: 30px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
+	overflow-y: auto;
+
+	background-color: $Color-HeaderBackground;
+
+	scroll-behavior: smooth;
+
+	> .category {
+		position: relative;
+		width: 250px;
+		height: 30px;
+		margin-right: 5px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		transition: .1s;
+
+		border-radius: 3px;
+		background-color:rgba(255, 255, 255, 0);
+
+		&:hover {
+			background-color:rgba(255, 255, 255, .2);
+		}
+	}
+
+	.submenu {
+		width: 250px;
+		height: 30px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		transition: .2s;
+
+		border-radius: 3px;
+		background-color:rgba(255, 255, 255, 0);
+
+		&:hover {
+			background-color:rgba(255, 255, 255, .2);
+		}
+	}
+}
+
+.content {
+	position: relative;
+	width: 70%;
+	padding: 20px;
+
+	overflow-y: auto;
+
+	scroll-behavior: smooth;
+}

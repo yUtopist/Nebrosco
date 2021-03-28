@@ -1,0 +1,24 @@
+.Icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 0;
+  transition: 0.2s;
+  font: 16pt Nebrosco;
+  font-size: 25px;
+}
+
+.TextField {
+  width: auto;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  transition: 0.2s;
+}
+
+.Dropdown {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  transition: 0.2s;
+}/*# sourceMappingURL=Modules.css.map */

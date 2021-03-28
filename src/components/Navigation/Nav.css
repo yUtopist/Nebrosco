@@ -1,0 +1,93 @@
+.Nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3d3b5b;
+}
+
+.Nav > .Nav-Logo {
+  position: absolute;
+  top: 5px;
+  width: 70px;
+}
+
+.Nav > .Nav-Avatar {
+  width: 40px;
+  height: 40px;
+  margin: 20px;
+  overflow: hidden;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border-radius: 20px;
+}
+
+.Nav > .Nav-Avatar::after {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  content: '';
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: 0;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.Nav > .Nav-Avatar:hover {
+  border-radius: 10px;
+}
+
+.Nav > .Nav-Avatar:hover::after {
+  opacity: .2;
+  border-radius: 10px;
+}
+
+.Nav > .Nav-Avatar > .Nav-Avatar-Image {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.Nav > .Nav-Button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font: 28pt Nebrosco;
+}
+
+.Nav > .Nav-Button::after {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  content: '';
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: 0;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.Nav > .Nav-Button:hover::after {
+  width: 40px;
+  height: 40px;
+  opacity: .2;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=Nav.css.map */

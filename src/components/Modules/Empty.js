@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ModelNotation from '../ModelSettings/ModelNotation';
+import ModelNotation from '../Settings/ModelSettings/ModelNotation';
 
 const Empty = (input) => {
 	const inputData = input['data'];

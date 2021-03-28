@@ -1,0 +1,104 @@
+.Dashboard {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  overflow-y: scroll;
+}
+.Dashboard > *:first-child {
+  margin-top: 40px;
+}
+
+.LargeGroup {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.LargeGroup .group {
+  margin: 40px 0;
+}
+
+.MediumGroup {
+  position: relative;
+  width: 50%;
+  height: 450px;
+}
+
+.Label {
+  position: relative;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.Label .label {
+  width: 10px;
+  height: 10px;
+  display: block;
+  border-radius: 100%;
+  background-color: white;
+}
+.Label .member {
+  margin-right: 20px;
+  margin-left: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Donut {
+  position: relative;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+}
+.Donut:first-child {
+  margin-right: 30px;
+}
+.Donut:last-child {
+  margin-left: 30px;
+}
+.Donut:not(:first-child):not(:last-child) {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.Donut .graph {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.Donut .graph > h1 {
+  z-index: 2;
+  font-weight: 500;
+}
+.Donut .graph > span {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  opacity: 0.5;
+  border: 30px solid white;
+  border-radius: 100%;
+}
+
+.Vertical {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: 100px 60px 0 60px;
+  background-color: rgba(220, 220, 220, 0.2);
+}
+
+.widget {
+  position: relative;
+  width: 730px;
+  height: 350px;
+  margin: 100px 60px 0 60px;
+  background-color: rgba(220, 220, 220, 0.2);
+}/*# sourceMappingURL=Dashboard.css.map */
