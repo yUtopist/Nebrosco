@@ -1,3 +1,8 @@
+// holly shit i got this
+// rounding up all the values and making sure they sum up to denominator
+// used largest remainder method
+// https://en.wikipedia.org/wiki/Largest_remainder_method
+// https://gist.github.com/scwood/e58380174bd5a94174c9f08ac921994f
 const roundedArray = (array: number[], denominator: number) => {
   const arrayTotal = array.reduce((a, b) => a + b)
 

@@ -10,7 +10,6 @@ interface LabelTypes {
 }
 
 const Label = (input: LabelTypes) => {
-  console.log(input)
   return (
     <div className='Label'>
       {

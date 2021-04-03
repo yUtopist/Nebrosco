@@ -26,7 +26,7 @@ const LargeGroup = (input: { data: groupTypes }) => {
               {
                 e.map((_e: widgetTypes, i: number) => {
                   const Tab = _e.type;
-                  return <Tab data={_e} />
+                  return <Tab data={_e} labels={labelsArray} />
                 })
               }
             </div>
@@ -36,23 +36,6 @@ const LargeGroup = (input: { data: groupTypes }) => {
       })}
     </div>
   )
-}
-
-const Group = (data: { data: Array<widgetTypes>; labels: { color: string; label: string }[] }) => {
-  let labelsArray: string[] = [];
-  //////
-  // const object = {
-  //   label: object.labels === undefined ? 'Empty' : object.labels[i],
-  //   value: Array.isArray(_value) ? _value[0] : _value,
-  //   angle: e.integer,
-  //   part: _part,
-  //   angleStart: 0,
-  //   angleFinish: 0,
-  //   anglePure: e.integer - (_part * 45),
-  //   color: data.labels[i].color
-  // }
-  ///////
-  return
 }
 
 export default LargeGroup;

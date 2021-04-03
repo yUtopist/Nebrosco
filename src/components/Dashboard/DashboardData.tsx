@@ -8,7 +8,6 @@ export interface widgetTypes {
   keys?: string[];
   labels?: string[];
   values: number[] | number[][];
-  colors?: string[];
   display?: string;
 }
 export interface groupTypes {
@@ -30,7 +29,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
           description: 'Total of visible tasks to me.',
           labels: ['Opened', 'In Progress', 'Resolved', 'Reopened'],
           values: [15, 12, 10, 2],
-          colors: ['#00aad4', '#ff5252', '#5bc565', '#ffe925'],
           display: '23'
         },
         {
@@ -40,7 +38,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
           description: 'Total of updated tasks today.',
           labels: ['Opened'],
           values: [15],
-          colors: ['#00aad4'],
           display: '15'
         },
         {
@@ -50,7 +47,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
           description: 'Progress of the goals set for today.',
           labels: ['Resolved'],
           values: [10],
-          colors: ['#5bc565'],
           display: '1/10'
         }
       ],
@@ -62,7 +58,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
           description: 'Total of still opened tasks.',
           labels: ['High', 'Medium', 'Low'],
           values: [1, 3, 1],
-          colors: ['#b1e5f2', '#efb1b1', '#b1efb7'],
           display: '15'
         },
         {
@@ -72,7 +67,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
           description: 'Total of still in progress tasks',
           labels: ['High', 'Medium', 'Low'],
           values: [3, 5, 4],
-          colors: ['#b1e5f2', '#efb1b1', '#b1efb7'],
           display: '12'
         }
       ]
@@ -85,7 +79,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
     keys: ['4/12', '5/12', '6/12', '7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12'],
     labels: ['Opened', 'Resolved'],
     values: [[8, 8], [0, 0], [0, 0], [4, 8], [5, 8], [8, 7], [8, 6], [4, 6], [0, 0], [0, 0], [8, 6]],
-    colors: ['#00aad4', '#ff5252'],
   },
   {
     id: 'widget-bargraph-tasks',
@@ -107,7 +100,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
       'Philip Haldiman'],
     labels: ['Opened', 'Resolved'],
     values: [[3, 8], [3, 8], [3, 8], [3, 8], [3, 8], [3, 8]],
-    colors: ['#00aad4', '#ff5252']
   },
   {
     id: 'widget-projects-vertical',
@@ -121,7 +113,6 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
       'mSpeed Landing'],
     labels: ['Opened', 'Resolved'],
     values: [[5, 7], [5, 3], [2, 5], [8, 0], [6, 0]],
-    colors: ['#00aad4', '#ff5252'],
   },
   {
     id: 'widget-agents-vertical',
@@ -136,6 +127,5 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
       'Philip Haldiman'],
     labels: ['Opened', 'Resolved'],
     values: [[3, 8], [3, 8], [3, 8], [3, 8], [3, 8], [3, 8]],
-    colors: ['#00aad4', '#ff5252'],
   }
 ]
