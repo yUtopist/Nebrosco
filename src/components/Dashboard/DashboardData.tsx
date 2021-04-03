@@ -17,7 +17,7 @@ export interface groupTypes {
   members: widgetTypes[][];
 }
 
-export let dashboardData: Array<groupTypes | widgetTypes> = [
+export const dashboardData: Array<groupTypes | widgetTypes> = [
   {
     id: 'top-wide-group',
     type: LargeGroup,

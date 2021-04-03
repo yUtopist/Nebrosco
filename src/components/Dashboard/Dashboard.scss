@@ -39,7 +39,31 @@
 	display: flex;
 	align-items: center;
 
-	.label {
+	.conteiner {
+		position: relative;
+		margin-right: 25px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&::before {
+			position: absolute;
+			width: calc(100% + 20px);
+			height: calc(100% + 10px);
+
+			content: '';
+			transition: .2s;
+
+			border-radius: 4px;
+		}
+
+		&:hover::before {
+			background-color: rgba(255, 255, 255, .25);
+		}
+	}
+
+	.color {
 		width: 10px;
 		height: 10px;
 
@@ -49,8 +73,7 @@
 		background-color: white;
 	}
 
-	.member {
-		margin-right: 20px;
+	.label {
 		margin-left: 8px;
 
 		display: flex;

@@ -1,21 +1,30 @@
 import React, { CSSProperties } from 'react';
 import '../Dashboard.css';
 
-const Label = (input?: { labels: { color: string; label: string }[] }) => {
+interface LabelTypes {
+  labels: {
+    label: string | undefined;
+    color: string;
+    hex: string;
+  }[]
+}
+
+const Label = (input: LabelTypes) => {
+  console.log(input)
   return (
     <div className='Label'>
       {
-        // data.labels.map((e, i) => {
-        //   const labelStyles: CSSProperties = {
-        //     backgroundColor: e.color
-        //   }
-        //   return (
-        //     <>
-        //       <span className='label' style={labelStyles}></span>
-        //       <h5 className='member' >{e.label}</h5>
-        //     </>
-        //   )
-        // })
+        input.labels.map(e => {
+          const labelStyles: CSSProperties = {
+            backgroundColor: e.hex
+          }
+          return (
+            <a className='conteiner' href='#'>
+              <span className='color' style={labelStyles}></span>
+              <h5 className='label' >{e.label}</h5>
+            </a>
+          )
+        })
       }
     </div>
   )

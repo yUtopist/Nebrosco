@@ -3,14 +3,14 @@ import ErrorHandler from '../../Errors/Errors';
 import '../Dashboard.css';
 import { widgetTypes } from '../DashboardData';
 
-interface dataTypes {
+interface inputTypes {
   data: widgetTypes;
   labels?: { color: string; label?: string }[]
 }
 type value = number | number[]
 
-const Donut = (data: dataTypes) => {
-  const object = data.data;
+const Donut = (input: inputTypes) => {
+  const object = input.data;
   let totalValues = 0;
   object.values.forEach((e: value) => totalValues += Array.isArray(e) ? e[0] : e)
 
@@ -62,10 +62,10 @@ const Donut = (data: dataTypes) => {
       : '32px';
   return (
     <div className='Donut flexed'>
-      <h1 className='title'>{data.data.title}</h1>
+      <h1 className='title'>{input.data.title}</h1>
       <div className='graph flexed'>
         <h1 style={{ fontSize: displaySize }}>
-          {data.data.display}
+          {input.data.display}
         </h1>
 
         {
@@ -115,7 +115,7 @@ const Donut = (data: dataTypes) => {
 
 
   /////////////////////////////////////////////////////////////////
-  if (data.data.id === 'widget-total-tasks') {
+  if (input.data.id === 'widget-total-tasks') {
     // const colors = ['#00aad4', '#ff5252', '#5bc565', '#ffe925']
     // const labels = ['Opened', 'In Progress', 'Resolved', 'Reopened']
     // const dataArray = [30, 20, 20, 20]

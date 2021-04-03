@@ -34,15 +34,32 @@
   display: flex;
   align-items: center;
 }
-.Label .label {
+.Label .conteiner {
+  position: relative;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Label .conteiner::before {
+  position: absolute;
+  width: calc(100% + 20px);
+  height: calc(100% + 10px);
+  content: "";
+  transition: 0.2s;
+  border-radius: 4px;
+}
+.Label .conteiner:hover::before {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.Label .color {
   width: 10px;
   height: 10px;
   display: block;
   border-radius: 100%;
   background-color: white;
 }
-.Label .member {
-  margin-right: 20px;
+.Label .label {
   margin-left: 8px;
   display: flex;
   justify-content: flex-start;

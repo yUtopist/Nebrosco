@@ -1,35 +1,24 @@
 import React from 'react';
+import { SettingsData } from '../../Settings/SettingsData';
 import '../Dashboard.css';
 import { groupTypes, widgetTypes } from '../DashboardData';
 import { Label } from './Widget';
-import { roundedArray } from '../../daddyWants'
 
-// input.data.members.map((e, i) => {
-//   const labelArray: string[] = []
-//   e.forEach(_e => {
-//     _e.labels?.forEach((__e: string) => {
-//       const element = Array.isArray(__e) ? __e[0] : __e
-//       !labelArray.includes(element) && labelArray.push(element)
-//     })
-//   })
-//   const labelsWithColors = labelArray.map((_e, i) => {
-//     const color = isAlt ? colors.altColors[i] : colors.colors[i]
-//     return { color: color, label: _e }
-//   })
-//   return <Group data={e} labels={labelsWithColors} />
-// })
-
-const LargeGroup = (input?: { data: groupTypes }) => {
+const LargeGroup = (input: { data: groupTypes }) => {
   return (
     <div className='LargeGroup flexed'>
-      {input?.data.members.map(e => {
+      {input.data.members.map((e, i) => {
 
+        // Looping thru all items and creating an array of labels
         const labelsArray = [... new Set(e.flatMap(_e => _e.labels))]
-        console.log(labelsArray)
-
-
-
-
+          .map((_e, _i) => {
+            const colorAlt = i === 0 ? 'dark' : 'bright'
+            return {
+              label: _e,
+              color: SettingsData['theme-colors']['color'][_i],
+              hex: SettingsData['theme-colors'][colorAlt][_i]
+            }
+          })
 
         return (
           <div className='group'>
@@ -41,7 +30,7 @@ const LargeGroup = (input?: { data: groupTypes }) => {
                 })
               }
             </div>
-            {/* <Label /> */}
+            <Label labels={labelsArray} />
           </div>
         )
       })}
@@ -67,16 +56,3 @@ const Group = (data: { data: Array<widgetTypes>; labels: { color: string; label:
 }
 
 export default LargeGroup;
-
-{
-  // NEED LOOP TO CHECK ALL LABELS FROM ALL MEMBERS AND ELEMENTS
-  // AND THEN SEND IT TO LABELS COMPONENT
-
-
-  // this part needs to be rewritten
-  // for now i do loop thru all the elements in the data and
-  // return label, then check if it is fresh and in that case
-  // i add it to the array.
-}
-
-

@@ -17,6 +17,7 @@ export const settingsConfig = {
       'Colour Scheme': 'theme-style',
       'Font Size': 'theme-font',
       'Icons Collection': 'theme-icons',
+      'Colours List': 'theme-colors',
       'Date Style': 'theme-date'
     },
     'Application Settings': {
