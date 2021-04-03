@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModelNotation from '../Settings/ModelSettings/ModelNotation';
 
-const Badge = (input) => {
+const Badge = (input: any) => {
 	const inputData = input['data'];
 
 	const inputColor = (inputData.color != null) ? inputData.color : '#B1E5F2';

@@ -1,30 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Icon from '../Modules/Icon';
 
-// Click outside the element function 
-function useOuterClick(callback) {
-	const innerRef = useRef();
-	const callbackRef = useRef();
-
-	// set current callback in ref, before second useEffect uses it
-	useEffect(() => { // useEffect wrapper to be safe for concurrent mode
-		callbackRef.current = callback;
-	});
-
-	useEffect(() => {
-		document.addEventListener('click', handleClick);
-		return () => document.removeEventListener('click', handleClick);
-
-		function handleClick(e) {
-			if (innerRef.current && callbackRef.current && !innerRef.current.contains(e.target)) {
-				callbackRef.current(e);
-			}
-		}
-	}, []);
-	return innerRef;
-}
-//======================================================================================================
-
 const TitleBar = () => {
 	const [seachFocused, setSeachFocused] = useState(false);
 	const searchField = useRef();
@@ -54,7 +30,7 @@ const Content = () => {
 	const [customArray, setCustomArray] = useState(modelArray);
 	const [menuFocused, setMenuFocused] = useState(false);
 
-	const Model = (input) => {
+	const Model = (input: any) => {
 		const custonText = input['type'];
 
 		return (
@@ -194,12 +170,8 @@ const Content = () => {
 }
 
 const Options = () => {
-	const innerRef = useOuterClick(e => {
-		// OUTSIDE CLICK HANDLER
-	});
-
 	return (
-		<div ref={innerRef}
+		<div
 			style={
 				{
 					width: '1100px',

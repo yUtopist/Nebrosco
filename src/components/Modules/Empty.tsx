@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModelNotation from '../Settings/ModelSettings/ModelNotation';
 
-const Empty = (input) => {
+const Empty = (input: any) => {
 	const inputData = input['data'];
 
 	const inputSize = (inputData.size != null) ? (inputData.size * 40) : 40;
@@ -11,7 +11,7 @@ const Empty = (input) => {
 	];
 	const inputDeveloper = (availableModes.includes(input['mode'])) ? input['mode'] : 'default';
 
-	const EmptyElement = (_input) => {
+	const EmptyElement = (_input: any) => {
 		const _inputDirection = _input['direction'];
 		return (
 			<div style={{

@@ -5,7 +5,7 @@ import { widgetTypes } from '../DashboardData';
 
 interface dataTypes {
   data: widgetTypes;
-  labels: { color: string; label: string }[]
+  labels?: { color: string; label?: string }[]
 }
 type value = number | number[]
 
@@ -48,7 +48,7 @@ const Donut = (data: dataTypes) => {
       angleStart: 0,
       angleFinish: 0,
       anglePure: e.integer - (_part * 45),
-      color: data.labels[i].color
+      // color: data.labels[i].color
     }
   })
   membersArray.forEach((e, i) => {
@@ -101,7 +101,7 @@ const Donut = (data: dataTypes) => {
             // same name as in the data array
             const spanStyle: CSSProperties = {
               transform: `rotate(${e.angleStart}deg)`,
-              border: `30px solid ${e.color}`,
+              // border: `30px solid ${e.color}`,
               clipPath: `polygon(50% 50%, 50% 0%${polygonString}, ${point[e.part]})`,
             }
             return <span style={spanStyle} />

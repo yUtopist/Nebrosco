@@ -4,7 +4,7 @@ import { groupTypes, widgetTypes } from '../DashboardData';
 
 interface dataTypes {
   data: widgetTypes;
-  labels: { color: string; label: string }[]
+  labels?: { color: string; label: string }[]
 }
 
 const Line = (data: dataTypes) => {

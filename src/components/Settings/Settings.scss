@@ -1,4 +1,4 @@
-@import '../../StylesVariables';
+@import '../../Styles';
 
 .navigation {
 	position: relative;
@@ -30,10 +30,10 @@
 		transition: .1s;
 
 		border-radius: 3px;
-		background-color:rgba(255, 255, 255, 0);
+		background-color: rgba(255, 255, 255, 0);
 
 		&:hover {
-			background-color:rgba(255, 255, 255, .2);
+			background-color: rgba(255, 255, 255, .2);
 		}
 	}
 
@@ -49,10 +49,10 @@
 		transition: .2s;
 
 		border-radius: 3px;
-		background-color:rgba(255, 255, 255, 0);
+		background-color: rgba(255, 255, 255, 0);
 
 		&:hover {
-			background-color:rgba(255, 255, 255, .2);
+			background-color: rgba(255, 255, 255, .2);
 		}
 	}
 }

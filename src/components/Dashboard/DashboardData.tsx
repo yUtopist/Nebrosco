@@ -11,7 +11,6 @@ export interface widgetTypes {
   colors?: string[];
   display?: string;
 }
-
 export interface groupTypes {
   id: string;
   type: typeof LargeGroup | typeof MediumGroup;
