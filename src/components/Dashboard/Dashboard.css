@@ -91,6 +91,7 @@
 }
 .Donut .graph > h1 {
   z-index: 2;
+  pointer-events: none;
   font-weight: 500;
 }
 .Donut .graph > span {
@@ -99,9 +100,12 @@
   width: 100%;
   height: 100%;
   transition: 0.2s;
-  opacity: 0.5;
-  border: 30px solid white;
+  border: 30px solid;
   border-radius: 100%;
+}
+.Donut .graph > span:hover {
+  width: 105%;
+  height: 105%;
 }
 
 .Vertical {

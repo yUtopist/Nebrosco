@@ -1,8 +1,7 @@
 import React, { CSSProperties } from 'react';
-import ErrorHandler from '../../Errors/Errors';
+import * as DaddyWants from '../../daddyWants';
 import '../Dashboard.css';
 import { widgetTypes } from '../DashboardData';
-import * as DaddyWants from '../../daddyWants'
 
 interface inputTypes {
   data: widgetTypes;
@@ -19,18 +18,18 @@ const Donut = (input: inputTypes) => {
   // Making a temprory array of elements which contain rounded
   // and prepared angles.
   const membersArray = object.values.map((e: value, i: number) => {
-    const value = Array.isArray(e) ? e[0] : e
     const _part = Math.floor(anglesArray[i] / 45);
+    const _pure = anglesArray[i] - (_part * 45);
+    const _isEven = _part % 2 === 0 ? true : false;
+    const _label = object.labels === undefined ? 'Empty' : object.labels[i]
+    const _color = input.labels.filter(_e => _e.label === _label && _e)[0]
     return {
-      label: object.labels === undefined ? 'Empty' : object.labels[i],
-      value: value,
-      color: input.labels[i].color,
-      colorHex: input.labels[i].hex,
+      colorHex: _color.hex,
       angle: anglesArray[i],
       part: _part,
       angleStart: 0,
       angleFinish: 0,
-      anglePure: anglesArray[i] - (_part * 45),
+      anglePure: _isEven ? _pure : 45 - _pure,
     }
   })
   membersArray.forEach((e, i) => {
@@ -44,16 +43,6 @@ const Donut = (input: inputTypes) => {
     : object.display.length <= 4 ? `${72 - (object.display.length * 8)}px`
       : '32px';
 
-  const parts = [
-    `100% 0%`,
-    `100% 50%`,
-    `100% 100%`,
-    `50% 100%`,
-    `0% 100%`,
-    `0% 50%`,
-    `0% 0%`
-  ]
-
   return (
     <div className='Donut flexed'>
       <h1 className='title'>{input.data.title}</h1>
@@ -61,36 +50,40 @@ const Donut = (input: inputTypes) => {
         <h1 style={{ fontSize: displaySize }}>
           {input.data.display}
         </h1>
-
         {
           membersArray.map((e, i) => {
 
-            // i think misstake is somewhere here because i always assume
-            // that the opposite in the one place
-            const opposite = (Math.tan(e.anglePure * Math.PI / 180) * 50)
-            const point = [
-              `${opposite + 50}% 0%`,
-              `100% ${opposite}%`,
-              `100% ${opposite + 50}%`,
-              `${100 - opposite}% 100%`,
-              `${50 - opposite}% 100%`,
-              `0% ${100 - opposite}%`,
-              `0% ${50 - opposite}%`,
-              `${opposite}% 0%`,
-            ]
             let polygonString = ''
+            const parts = [
+              `100% 0%`,
+              `100% 50%`,
+              `100% 100%`,
+              `50% 100%`,
+              `0% 100%`,
+              `0% 50%`,
+              `0% 0%`
+            ]
             for (let i = 0; i < e.part; i++) {
               polygonString += `, ${parts[i]}`
             }
+            const opposite = Math.tan((e.anglePure) * Math.PI / 180) * 50
+            const point = [
+              `${opposite + 50}% 0%`,
+              `100% ${50 - opposite}%`,
+              `100% ${opposite + 50}%`,
+              `${opposite + 50}% 100%`,
+              `${50 - opposite}% 100%`,
+              `0% ${opposite + 50}%`,
+              `0% ${50 - opposite}%`,
+              `${50 - opposite}% 0%`,
+            ]
 
-            // Need to fix colors since now they are index dependend
-            // and i need to map thru and find one which is the 
-            // same name as in the data array
             const spanStyle: CSSProperties = {
+              borderColor: e.colorHex,
               transform: `rotate(${e.angleStart}deg)`,
-              border: `30px solid ${e.colorHex}`,
               clipPath: `polygon(50% 50%, 50% 0%${polygonString}, ${point[e.part]})`,
             }
+
             return <span style={spanStyle} />
           })
         }

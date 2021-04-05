@@ -112,6 +112,8 @@
 		> h1 {
 			z-index: 2;
 
+			pointer-events: none;
+
 			font-weight: 500;
 		}
 
@@ -123,9 +125,13 @@
 
 			transition: .2s;
 
-			opacity: .5;
-			border: 30px solid white;
+			border: 30px solid;
 			border-radius: 100%;
+
+			&:hover {
+				width: 105%;
+				height: 105%;
+			}
 		}
 	}
 }

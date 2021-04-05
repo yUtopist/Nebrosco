@@ -14,9 +14,9 @@ const Dashboard = () => {
           return <Tab data={e} />
         })
       }
+
     </div>
   )
 }
 
 export default Dashboard;
-

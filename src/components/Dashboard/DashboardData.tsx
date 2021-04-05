@@ -45,8 +45,8 @@ export const dashboardData: Array<groupTypes | widgetTypes> = [
           type: Donut,
           title: "Today's Goal",
           description: 'Progress of the goals set for today.',
-          labels: ['Resolved'],
-          values: [10],
+          labels: ['Resolved', 'In Progress'],
+          values: [1, 9],
           display: '1/10'
         }
       ],
