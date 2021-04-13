@@ -6,7 +6,16 @@
 	height: 100vh;
 
 	display: flex;
+}
+
+#parent {
+	width: 100%;
+
+	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
-	align-items: 'flex-start';
+}
+
+#parent > nav {
+	width: 300px;
+	height: auto;
 }

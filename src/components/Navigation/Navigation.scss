@@ -1,6 +1,6 @@
 @import '../../Styles';
 
-.Nav {
+.Navigation {
 	position: relative;
 	width: 60px;
 	height: 100%;
@@ -9,16 +9,11 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
+	overflow-x: hidden;
 
-	background-color: #3d3b5b;
+	background-color: #354854;
 
-	> .Nav-Logo {
-		position: absolute;
-		top: 5px;
-		width: 70px;
-	}
-
-	> .Nav-Avatar {
+	> .NavigationAvatar {
 		width: 40px;
 		height: 40px;
 		margin: 20px;
@@ -51,19 +46,18 @@
 			}
 		}
 
-		> .Nav-Avatar-Image {
+		> .NavigationAvatarImage {
 			position: relative;
 			width: 40px;
 			height: 40px;
 		}
 	}
 
-	> .Nav-Button {
+	> .NavigationButton {
 		position: relative;
 		width: 40px;
 		height: 40px;
-		margin-top: 10px;
-		margin-bottom: 20px;
+		margin: 10px 0;
 
 		font: 28pt Nebrosco;
 
@@ -80,24 +74,37 @@
 			background-color: white;
 		}
 
+		&::before {
+			position: absolute;
+			left: -15px;
+			width: 10px;
+			height: 10px;
+
+			content: '';
+			transition: .2s;
+
+			opacity: .8;
+			border-radius: 20px;
+			background-color: white;
+		}
+
 		&:hover {
 			&::after {
-				width: 40px;
-				height: 40px;
-
 				opacity: .15;
 				border-radius: 10px;
+			}
+		}
+
+		&:not(.selected):hover {
+			&::before {
+				height: 20px;
 			}
 		}
 	}
 
 	.selected {
-		&::after {
-			width: 40px;
+		&::before {
 			height: 40px;
-
-			opacity: .1;
-			border-radius: 10px;
 		}
 	}
 }

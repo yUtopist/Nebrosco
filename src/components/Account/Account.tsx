@@ -1,9 +1,11 @@
 import React from 'react';
+import './Account.css';
+
 
 const Account = () => {
   return (
     <>
-      <div className='flexed bigged debugged'>
+      <div className='Account flexed debugged'>
         <h3>Account</h3>
       </div>
     </>

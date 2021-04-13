@@ -1,18 +1,20 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { NavigationPropsTypes } from '../../App';
 import * as Component from '../Components';
 import Icon, { IconInputTypes } from '../Modules/Icon';
 import './Navigation.css';
 
+interface inputTypes {
+  data: NavigationPropsTypes;
+}
 interface LinksTypes {
   tab: keyof typeof Component;
   icon?: string;
   selected?: boolean;
 }
-interface propsTypes {
-  data: NavigationPropsTypes;
-}
 
+// i need to change this at some point
 const Links: Array<LinksTypes> = [
   {
     tab: 'Dashboard',
@@ -37,46 +39,42 @@ const Links: Array<LinksTypes> = [
 ]
 
 // Component
-const Navigation = (props: propsTypes) => {
-  const placeIcon = (iconName: string) => {
-    const iconParameters: IconInputTypes = {
-      icon: iconName,
-      styles: {
-        fontSize: '36px'
-      }
-    }
-    return <Icon {...iconParameters} />
-  }
-  const buttonHandler = (object: LinksTypes) => {
-    props.data.RenderTab(object.tab)
-    Links.forEach(_object => {
-      if (_object === object) _object.selected = true;
-      else _object.selected = false
-    })
-  }
-
-  Links.map(object => object.selected = object.tab === props.data.currentTab ? true : false)
-  // Rendering
+const Navigation = (input: inputTypes) => {
+  const data = input.data;
+  // BELLOW is a logic for making current tab highlighted 
+  // Links.map(e => e.selected = e.tab === data.currentTab ? true : false)
   return (
-    <header className='Nav'>
-      {/* <img className='Nav-Logo' src='svg/nebrosco-logo.svg' /> */}
+    <nav className='Navigation'>
       {/* <Favorites/> */}
-      {Links.map(object => {
-        const selected = object.selected === true ? 'selected' : ''
+      {Links.map(e => {
+        const selected = e.selected === true ? 'selected' : ''
+        !e.icon && (e.icon = 'photograph')
+
+        const iconParameters: IconInputTypes = {
+          icon: e.icon,
+          styles: {
+            fontSize: '36px'
+          }
+        }
+
         return (
-          <button
-            className={`Nav-Button flexed ghost ${selected}`}
-            onClick={() => buttonHandler(object)}>
-            {placeIcon(object.icon ? object.icon : 'photograph')}
-          </button>
+          <Link
+            to={`/${e.tab}`}
+            className={`NavigationButton flexed ${selected}`}
+            onClick={() => data.RenderTab(e.tab)}
+          >
+            <Icon {...iconParameters} />
+          </Link>
         )
       })}
-      <button
-        className='Nav-Avatar flexed _button-ghost'
-        onClick={() => buttonHandler({ tab: 'Account' })}>
-        <img className='Nav-Avatar-Image' src='svg/avatar.png' alt='Account' />
-      </button>
-    </header>
+      <Link
+        to='/Account'
+        className='NavigationAvatar flexed ghost'
+        onClick={() => data.RenderTab('Account')}
+      >
+        <img className='NavigationAvatarImage' src='svg/avatar.png' alt='Account' />
+      </Link>
+    </nav>
   )
 }
 

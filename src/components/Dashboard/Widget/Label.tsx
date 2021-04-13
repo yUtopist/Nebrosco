@@ -1,27 +1,22 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import '../Dashboard.css';
 
-interface LabelTypes {
-  labels: {
-    label: string | undefined;
-    color: string;
-    hex: string;
-  }[]
-}
+const Label = (input: { labels: { label: string | undefined; color: string; highlighted: boolean }[] }) => {
+  const [isGreyed, setGreyed] = useState(false);
 
-const Label = (input: LabelTypes) => {
+  const labels = input.labels;
   return (
     <div className='Label'>
       {
-        input.labels.map(e => {
+        labels.map(e => {
           const labelStyles: CSSProperties = {
-            backgroundColor: e.hex
+            backgroundColor: e.color,
           }
           return (
-            <a className='conteiner' href='#'>
-              <span className='color' style={labelStyles}></span>
+            <span className='member'>
+              <span className='color' style={labelStyles} />
               <h5 className='label' >{e.label}</h5>
-            </a>
+            </span>
           )
         })
       }

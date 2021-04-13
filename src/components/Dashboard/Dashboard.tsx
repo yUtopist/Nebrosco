@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorHandler from '../Errors/Errors';
+import ReactDOM from 'react-dom'
 import './Dashboard.css';
 import { dashboardData } from './DashboardData';
 
@@ -14,7 +14,6 @@ const Dashboard = () => {
           return <Tab data={e} />
         })
       }
-
     </div>
   )
 }

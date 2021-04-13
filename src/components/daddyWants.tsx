@@ -25,4 +25,3 @@ const roundedArray = (array: number[], denominator: number) => {
 }
 
 export { roundedArray };
-

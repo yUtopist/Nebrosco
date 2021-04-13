@@ -12,7 +12,7 @@ body {
 	word-wrap: break-word;
 
 	color: #e8e9f3;
-	background-color: #272635;
+	background-color: #202a34;
 
 	font: 16pt Roboto, Helvetica, Arial;
 }
@@ -74,7 +74,9 @@ a {
 	color: #e8e9f3;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
 	list-style: none;
 }
 

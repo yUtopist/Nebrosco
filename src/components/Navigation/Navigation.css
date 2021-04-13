@@ -1,4 +1,4 @@
-.Nav {
+.Navigation {
   position: relative;
   width: 60px;
   height: 100%;
@@ -6,14 +6,10 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  background-color: #3d3b5b;
+  overflow-x: hidden;
+  background-color: #354854;
 }
-.Nav > .Nav-Logo {
-  position: absolute;
-  top: 5px;
-  width: 70px;
-}
-.Nav > .Nav-Avatar {
+.Navigation > .NavigationAvatar {
   width: 40px;
   height: 40px;
   margin: 20px;
@@ -21,7 +17,7 @@
   transition: 0.2s;
   border-radius: 20px;
 }
-.Nav > .Nav-Avatar::after {
+.Navigation > .NavigationAvatar::after {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -31,27 +27,26 @@
   border-radius: 20px;
   background-color: white;
 }
-.Nav > .Nav-Avatar:hover {
+.Navigation > .NavigationAvatar:hover {
   border-radius: 10px;
 }
-.Nav > .Nav-Avatar:hover::after {
+.Navigation > .NavigationAvatar:hover::after {
   opacity: 0.2;
   border-radius: 10px;
 }
-.Nav > .Nav-Avatar > .Nav-Avatar-Image {
+.Navigation > .NavigationAvatar > .NavigationAvatarImage {
   position: relative;
   width: 40px;
   height: 40px;
 }
-.Nav > .Nav-Button {
+.Navigation > .NavigationButton {
   position: relative;
   width: 40px;
   height: 40px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 10px 0;
   font: 28pt Nebrosco;
 }
-.Nav > .Nav-Button::after {
+.Navigation > .NavigationButton::after {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -61,15 +56,24 @@
   border-radius: 20px;
   background-color: white;
 }
-.Nav > .Nav-Button:hover::after {
-  width: 40px;
-  height: 40px;
+.Navigation > .NavigationButton::before {
+  position: absolute;
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  content: "";
+  transition: 0.2s;
+  opacity: 0.8;
+  border-radius: 20px;
+  background-color: white;
+}
+.Navigation > .NavigationButton:hover::after {
   opacity: 0.15;
   border-radius: 10px;
 }
-.Nav .selected::after {
-  width: 40px;
+.Navigation > .NavigationButton:not(.selected):hover::before {
+  height: 20px;
+}
+.Navigation .selected::before {
   height: 40px;
-  opacity: 0.1;
-  border-radius: 10px;
 }
