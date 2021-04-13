@@ -4,6 +4,80 @@
 }
 
 .Login {
-  width: 100%;
-  height: 100vh;
+  position: relative;
+  width: 26rem;
+  height: auto;
+  padding: 2rem 0;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: #e8e9f2;
+  border-radius: 2px;
+  background: #354854;
+  box-shadow: 0 10px 20px rgba(15, 31, 44, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+.Login:hover {
+  background: #3a4f5c;
+  box-shadow: 0 14px 28px rgba(15, 31, 44, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.Login header {
+  padding: 2rem 0 1rem 0;
+  flex-direction: column;
+}
+.Login header > img {
+  width: 160px;
+}
+.Login header > h1 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.Login footer {
+  padding-top: 1rem;
+  flex-direction: row;
+  gap: 2rem;
+}
+.Login form {
+  padding: 1rem 0;
+  flex-direction: column;
+}
+.Login form label {
+  position: relative;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Login form label.focused h5 {
+  top: -0.5rem;
+}
+.Login form label.focused input {
+  background: #9bb8ca;
+}
+.Login form label h5 {
+  position: absolute;
+  top: 2.5rem;
+  margin-left: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: #e8e9f2;
+}
+.Login form label input {
+  box-sizing: border-box;
+  width: 22rem;
+  height: 3rem;
+  padding-left: 1rem;
+  color: #202a34;
+  background: #637d8d;
+  font-size: 1rem;
+}
+.Login form .submit {
+  padding: 0.5rem 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: #e8e9f2;
+  border-radius: 4px;
+  background: #597281;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.Login form .submit:hover {
+  background: #637d8d;
 }

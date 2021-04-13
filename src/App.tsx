@@ -20,7 +20,7 @@ const App = () => {
 	document.title = `Nebrosco - ${tabName}`
 
 	return (
-		<div className='App'>
+		<main className='App flexed'>
 			<Component.Login />
 			{/* <Router>
 				<Navigation data={navigationProps} />
@@ -30,7 +30,7 @@ const App = () => {
 					<Route path={`*`} component={Component.Dashboard} />
 				</Switch>
 			</Router> */}
-		</div>
+		</main>
 	)
 };
 
